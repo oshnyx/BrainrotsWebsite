@@ -19,13 +19,9 @@ body {
 /* Header */
 header {
     background: #333;
-    color: green;
+    color: #fff;
     padding: 20px 0;
 }
-
-    header h1 {
-        margin-bottom: 10px;
-    }
 
 nav ul {
     list-style: none;
@@ -41,6 +37,53 @@ nav a {
     nav a:hover {
         text-decoration: underline;
     }
+    .header__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+header h1 {
+    font-family: 'Nosifer', cursive;
+    font-size: 2rem;
+    color: #AA0000;
+    text-shadow: 1px 1px 2px black
+    ,0 0 2px #AA0000;
+    margin: 0;
+}
+.header__left {
+    display: flex;
+    align-items: center
+}
+.header__left img {
+        width: 90px;
+        height: 90px;
+}
+.header__right {
+    display: flex;
+    align-items: center
+}
+    .header__right img {
+        width: 90px;
+        height: 90px;
+    }
+
+nav a {
+    font-family: 'Nosifer', cursive;
+    font-size: 1rem;
+    color: #AA0000;
+    text-shadow: 0 0 1px black, 0 0 1px #AA0000;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+    nav a:hover {
+        color: #FF3333; 
+        text-shadow: 0 0 2px black, 0 0 3px #FF3333; 
+    }
+
+
+
 
 /* Sections */
 .section {
