@@ -81,6 +81,9 @@ header h1 {
     }
 /*Sections*/
 
+/*section 1*/
+/*left*/
+
 .section {
     padding: 60px 0;
     background: linear-gradient(to bottom right, #FFFF00, #000000, #AA0000);
@@ -104,7 +107,7 @@ header h1 {
         margin-bottom: 5px;
     }
 
-.section__left {
+.section__item__left {
     display: flex;
     flex-direction: column;
     gap: 55px;
@@ -112,7 +115,7 @@ header h1 {
 }
 
 
-.section__left__lower {
+.section__lower {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -124,7 +127,7 @@ header h1 {
     gap: 5px;
 }
 
-.sin__icon {
+.sin__icon__red {
     width: 30px !important;
     height: 30px !important;
     object-fit: contain;
@@ -149,7 +152,7 @@ button {
     text-shadow: 0 0 2px black, 0 0 3px #FF2222;
 }
 
-button:hover .sin__icon {
+button:hover .sin__icon__red {
     transform: scale(1.1) rotate(10deg);
     transition: transform 0.3s;
 }
@@ -177,8 +180,65 @@ button:hover .sin__icon {
     letter-spacing: 1px;
     margin-top: 3px;
 }
-/* Footer */
 
+/*section 1*/
+/*right*/
+
+.section__item__right {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    background: linear-gradient(180deg, #0b0b0b, #1a1a00);
+}
+.section__right__upper p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section__right__upper h2 {
+    color: #FFFF22; 
+    text-shadow: 0 0 2px black, 0 0 3px #FFFF66; 
+}
+
+.section__right__text a {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFFF22; 
+    text-shadow: 0 0 2px black, 0 0 3px #FFFF22;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+}
+
+    .section__right__text a:hover {
+        color: #FFFF66; 
+        text-shadow: 0 0 3px black, 0 0 5px #FFFF66;
+        box-shadow: 0 0 5px #CCCC00, 0 0 10px #FFFF33;
+    }
+
+.section__right__text p {
+    font-size: 0.75rem;
+    color: #AAAAAA;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-top: 3px;
+}
+.sin__icon__yellow {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: contain;
+    background-color: #FFFF22;
+}
+
+.sin__icon__yellow:hover { 
+    transform: scale(1.15) rotate(-10deg); 
+    transition: transform 0.3s;
+}
+
+
+
+/* Footer */
 footer {
     background: black;
     text-align: center;
