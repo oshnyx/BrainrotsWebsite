@@ -32,11 +32,9 @@ nav ul {
 }
 
 .nav-link {
-    color: #fff;
-    text-decoration: none;
+    color: #AA0000;
     font-family: 'Nosifer', cursive;
     font-size: 1rem;
-    color: #AA0000;
     text-shadow: 0 0 1px black, 0 0 1px #AA0000;
     text-decoration: none;
     transition: color 0.3s, text-shadow 0.3s;
@@ -83,21 +81,33 @@ header h1 {
     }
 
 /* Section */
+@media screen and (max-width: 1200px) {
+    .section__wrap {
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+        gap: 40px;
+    }
+}
+
 .section {
     padding: 60px 0;
-    background: linear-gradient(to bottom right, #FFFF00, #000000, #AA0000);
+    background: linear-gradient(135deg, #0b0000 0%, 
+    #330011 30%, 
+    #660022 60%, 
+    #990033 90% 
+    );
 }
 
 .section__wrap {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-    gap: 100px; /* spacing between items (increase if you want even more) */
-    align-items: start; /* keeps tops aligned */
-    justify-items: center; /* centers each item inside its grid cell */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    align-items: start;
+    justify-items: center;
 }
 
     .section__wrap img {
-        width: 300px;
+        width: 100%;
+        max-width: 290px;
         height: auto;
     }
 
@@ -111,8 +121,10 @@ header h1 {
 .section__item__left {
     display: flex;
     flex-direction: column;
-    gap: 55px;
+    gap: 50px;
     background: linear-gradient(180deg, #0b0b0b, #1a0000);
+    width: 275px;
+    height: 618px;
 }
 
 .section__left__upper p {
@@ -132,7 +144,6 @@ header h1 {
 .section__left__text {
     display: flex;
     flex-direction: column;
-    gap: 5px;
 }
 
     .section__left__text a {
@@ -143,6 +154,9 @@ header h1 {
         text-shadow: 0 0 2px black, 0 0 3px #FF2222;
         text-decoration: none;
         transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+        display: inline-block;
+        padding: 0;
+        line-height: 1;
     }
 
         .section__left__text a:hover {
@@ -190,8 +204,10 @@ button {
 .section__item__middle {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 78px;
     background: linear-gradient(180deg, #0f0f0f, #050505);
+    width: 275px;
+    height: 618px;
 }
 
 .section__middle__upper p {
@@ -263,8 +279,10 @@ button {
 .section__item__right {
     display: flex;
     flex-direction: column;
-    gap: 55px;
+    gap: 73px;
     background: linear-gradient(180deg, #0b0b0b, #1a1a00);
+    width: 275px;
+    height: 618px;
 }
 
 .section__right__upper p {
@@ -318,6 +336,92 @@ button {
         box-shadow: 0 0 5px #FFFF66, 0 0 10px #CCCC00;
         transition: transform 0.3s;
     }
+
+/* Section Last - Labubu */
+.section__item__last {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #33001a, #660033);
+    gap: 30px;
+    width: 275px;
+    height: 618px;
+}
+
+.section__last__upper p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #BBBBBB;
+    text-align: center;
+}
+
+.section__last__upper h2 {
+    color: #FF3399;
+    text-shadow: 0 0 2px black, 0 0 3px #FF3399;
+    text-align: center;
+}
+
+.section__last__text a {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FF3399;
+    text-shadow: 0 0 2px black, 0 0 3px #FF3399;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    padding: 0;
+    line-height: 1;
+}
+
+    .section__last__text a:hover {
+        color: #FF66CC;
+        text-shadow: 0 0 4px black, 0 0 6px #FF66CC;
+        box-shadow: 0 0 5px #FF3399, 0 0 10px #FF66CC;
+    }
+
+.section__last__text p {
+    font-size: 0.75rem;
+    color: #AAAAAA;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-top: 3px;
+    text-align: center;
+}
+
+.sin__icon__pink {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: contain;
+    background-color: #FF3399;
+}
+
+    .sin__icon__pink:hover {
+        animation: wigglePink 0.6s ease-in-out infinite alternate;
+        box-shadow: 0 0 5px #FF3399, 0 0 10px #FF66CC;
+    }
+
+@keyframes wigglePink {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(-10deg) scale(1.1);
+    }
+
+    50% {
+        transform: rotate(10deg) scale(1.1);
+    }
+
+    75% {
+        transform: rotate(-5deg) scale(1.05);
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
 
 /* Footer */
 footer {
