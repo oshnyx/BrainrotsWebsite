@@ -1,46 +1,61 @@
 const form = document.querySelector("#myForm");
 
-form.addEventListener("submit", function(e){
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-e.preventDefault();
+    const fullname = document.querySelector("#fullname").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const phone = document.querySelector("#phone").value.trim();
+    const subject = document.querySelector("#subject").value.trim();
+    const message = document.querySelector("#message").value.trim();
 
-const fullname = document.querySelector("#fullname").value.trim();
-const email = document.querySelector("#email").value.trim();
-const phone = document.querySelector("#phone").value.trim();
-const subject = document.querySelector("#subject").value.trim();
-const message = document.querySelector("#message").value.trim();
+    if (fullname.length < 3) {
+        alert("Full name must contain at least 3 characters");
+        return;
+    }
 
-if(fullname.length < 3){
-alert("Full name must contain at least 3 characters");
-return;
-}
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Invalid email address");
+        return;
+    }
 
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^[0-9]{10,}$/;
+    if (!phonePattern.test(phone)) {
+        alert("Phone number must contain at least 10 digits");
+        return;
+    }
 
-if(!emailPattern.test(email)){
-alert("Invalid email address");
-return;
-}
+    if (subject.length < 5) {
+        alert("Subject must contain at least 5 characters");
+        return;
+    }
 
-const phonePattern = /^[0-9]{10,}$/;
+    if (message.length < 10) {
+        alert("Message must contain at least 10 characters");
+        return;
+    }
 
-if(!phonePattern.test(phone)){
-alert("Phone number must contain at least 10 digits");
-return;
-}
-
-if(subject.length < 5){
-alert("Subject must contain at least 5 characters");
-return;
-}
-
-if(message.length < 10){
-alert("Message must contain at least 10 characters");
-return;
-}
-
-alert("Message sent successfully!");
-
-form.reset();
-
+    fetch("http://localhost:3000/submit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            fullname,
+            email,
+            phone,
+            subject,
+            message
+        })
+    })
+    .then(res => res.text())
+    .then(data => {
+        alert(data); 
+        form.reset();
+    })
+    .catch(err => {
+        console.error(err);
+        alert("Error sending message");
+    });
 });
